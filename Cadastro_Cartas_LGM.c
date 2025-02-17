@@ -88,6 +88,7 @@ printf("Para cadastrar as propriedades da primeira cidade desse ESTADO, que ter�
  scanf("%i", &Populacao_A01);
 
  printf("\nInforme a ÁREA desta cidade:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.12): \n");
+ fflush(stdin);
  scanf("%f", &Area_A01);
 
  printf("\nDiga-nos o PIB - Produto Interno Bruto - da cidade \n(utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.12):\n");
@@ -105,7 +106,6 @@ printf("Para cadastrar as propriedades da primeira cidade desse ESTADO, que ter�
    printf("Área: %.2f \n", Area_A01);
    printf("PIB: %.2f \n", PIB_A01);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A01);
-   
    printf("Densidade Populacional: %.2f \n", densidade_A01);
    printf("PIB Per Capita: %.2f \n", pibpc_A01);
 
