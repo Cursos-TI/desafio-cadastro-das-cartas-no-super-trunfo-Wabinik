@@ -31,18 +31,12 @@ int main() {
   float PIB_A01;
   int Pontos_Turisticos_A01;  //Não usar acentos nas variáveis
 
-  float densidade_A01 = Populacao_A01 / Area_A01;
-  float pibpc_A01 = PIB_A01 / Populacao_A01;
-
 
    char Cidade_A02[32];
   int Populacao_A02;
   float Area_A02;
   float PIB_A02;
   int Pontos_Turisticos_A02;
-
-  float densidade_A02 = Populacao_A02 / Area_A02;
-  float pibpc_A02 = PIB_A02 / Populacao_A02;
 
 
      char Cidade_A03[32];
@@ -51,9 +45,6 @@ int main() {
   float PIB_A03;
   int Pontos_Turisticos_A03;
 
-  float densidade_A03 = Populacao_A03 / Area_A03;
-  float pibpc_A03 = PIB_A03 / Populacao_A03;
-
 
      char Cidade_A04[32];
   int Populacao_A04;
@@ -61,11 +52,8 @@ int main() {
   float PIB_A04;
   int Pontos_Turisticos_A04;
 
-float densidade_A04 = Populacao_A04 / Area_A04;
-float pibpc_A04 = PIB_A04 / Populacao_A04;
 
-
-
+//Início do cadastro de cartas
 
 printf("Olá, bem vindo(a) ao cadastro de cartas do Super Trunfo Países! Digite, sem acentos, caracteres especiais ou espaços, o nome \nde um(1) país para começar a cadastrar seus estados e cidades: \n"); 
 
@@ -77,6 +65,10 @@ printf("Agora, comece a cadastrar seu ESTADO! Digite, sem acentos, caracteres es
  scanf("%s", &Nome_estado_A01);
  fflush(stdin);
  printf("O ESTADO A será: %s \n", Nome_estado_A01);
+
+//A ideia era fazer mais estados, porém, devido ao curto tempo, ficou apenas um estado com quatro opções de cartas
+
+//Primeira cidade
 
 printf("Para cadastrar as propriedades da primeira cidade desse ESTADO, que terá por código A01, siga as instruções abaixo: \n");
 
@@ -97,6 +89,9 @@ printf("Para cadastrar as propriedades da primeira cidade desse ESTADO, que ter�
  printf("\nInforme o número de PONTOS TURÍSTICOS:\n");
  scanf("%i", &Pontos_Turisticos_A01);
 
+ float densidade_A01 = Populacao_A01 / Area_A01;
+ float pibpc_A01 = PIB_A01 / Populacao_A01;
+
 
   printf("\n \n \nParabéns, sua primeira carta foi cadastrada com SUCESSO! \n \n");
 
@@ -110,17 +105,19 @@ printf("Para cadastrar as propriedades da primeira cidade desse ESTADO, que ter�
    printf("PIB Per Capita: %.2f \n", pibpc_A01);
 
 
-   ///////////////////////////////////////////////////////////////////////////////////////////
+// Confirmação, se cadastrará mais cartas ou não
 
    printf("\nDeseja cadastrar mais cartas? digite '1' para sim e '2' para não:\n  ");
     fflush(stdin);
 scanf(" %i", &confirma); 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////// Uso do if e else
 
        if (confirma == sim)    
 
     {  printf("\n\nSiga as instruções abaixo para cadastrar a segunda cidade do ESTADO A: \n");
+
+//Segunda cidade
 
  printf("\nDigite o NOME da CIDADE 2 - A02: \n Digite, sem acentos, caracteres especiais ou espaços, o nome para cidade 2 \n");
  fflush(stdin);
@@ -137,6 +134,10 @@ scanf(" %i", &confirma);
 
  printf("\nInforme o número de PONTOS TURÍSTICOS:\n");
  scanf("%i", &Pontos_Turisticos_A02);
+
+ 
+ float densidade_A02 = Populacao_A02 / Area_A02;
+ float pibpc_A02 = PIB_A02 / Populacao_A02;
 
 
   printf("\n \n \nParabéns, sua segunda carta foi cadastrada com SUCESSO! \n \n");
@@ -160,6 +161,14 @@ scanf(" %i", &confirma);
    printf("Densidade Populacional: %.2f \n", densidade_A02);
    printf("PIB Per Capita: %.2f \n", pibpc_A02);
 
+   printf("\nAgora que já tem duas cartas, gostaria de fazer a comparação entre elas para saber qual é mais forte?\n  ");
+   fflush(stdin);
+   scanf(" %i", &confirma);
+   
+   if (confirma == sim)
+    goto hcompara;
+   else (confirma == nao);
+
     printf("\nDeseja cadastrar mais cartas? digite '1' para sim e '2' para não:\n  ");
     fflush(stdin);
     scanf(" %i", &confirma);
@@ -168,6 +177,8 @@ scanf(" %i", &confirma);
     {
 /////////////////////////////////////////////////////////////////////////////////////////////////////      
       printf("\n\nSiga as instruções abaixo para cadastrar a terceira cidade do ESTADO A: \n");
+
+//Terceira cidade
 
  printf("\nDigite o NOME da CIDADE 3 - A03: \n Digite, sem acentos, caracteres especiais ou espaços, o nome para cidade 3 \n");
  fflush(stdin);
@@ -184,6 +195,9 @@ scanf(" %i", &confirma);
 
  printf("\nInforme o número de PONTOS TURÍSTICOS:\n");
  scanf("%i", &Pontos_Turisticos_A03);
+
+ float densidade_A03 = Populacao_A03 / Area_A03;
+ float pibpc_A03 = PIB_A03 / Populacao_A03;
 
 
   printf("\n \n \nParabéns, sua terceira carta foi cadastrada com SUCESSO! \n \n");
@@ -225,6 +239,8 @@ scanf(" %i", &confirma);
 ///////////////////////////////////////////////////////////////////////////////////////////////      
       printf("\n\nSiga as instruções abaixo para cadastrar a quarta cidade do ESTADO A: \n");
 
+//Quarta cidade
+
  printf("\nDigite o NOME da CIDADE 4: \n Digite, sem acentos, caracteres especiais ou espaços, o nome para cidade 4 \n");
  fflush(stdin);
  scanf("%s", &Cidade_A04);
@@ -240,6 +256,9 @@ scanf(" %i", &confirma);
 
  printf("\nInforme o número de PONTOS TURÍSTICOS:\n");
  scanf("%i", &Pontos_Turisticos_A04);
+
+float densidade_A04 = Populacao_A04 / Area_A04;
+float pibpc_A04 = PIB_A04 / Populacao_A04;
 
 
   printf("\n \n \nParabéns, sua segunda carta foi cadastrada com SUCESSO! \n \n");
@@ -285,6 +304,11 @@ scanf(" %i", &confirma);
    goto cabofim;
    }
    }
+
+
+//Área de comparação entre cartas
+hcompara:
+printf("teste");
 
 cabofim:
 
