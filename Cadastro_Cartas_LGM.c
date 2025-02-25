@@ -147,17 +147,16 @@ scanf(" %i", &confirma);
    printf("População: %i \n", Populacao_A01);
    printf("Área: %.2f \n", Area_A01);
    printf("PIB: %.2f \n", PIB_A01);
-   printf("Número de Pontos Turísticos: %i \n\n", Pontos_Turisticos_A01);
+   printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A01);
    printf("Densidade Populacional: %.2f \n", densidade_A01);
-   printf("PIB Per Capita: %.2f \n", pibpc_A01);
+   printf("PIB Per Capita: %.2f \n\n", pibpc_A01);
 
    printf("Código da Carta: A02\n");
    printf("Cidade 2: %s \n", Cidade_A02);
    printf("População: %i \n", Populacao_A02);
    printf("Área: %.2f \n", Area_A02);
    printf("PIB: %.2f \n", PIB_A02);
-   printf("Número de Pontos Turísticos: %i \n\n", Pontos_Turisticos_A02);
-
+   printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A02);
    printf("Densidade Populacional: %.2f \n", densidade_A02);
    printf("PIB Per Capita: %.2f \n", pibpc_A02);
 
@@ -207,26 +206,25 @@ scanf(" %i", &confirma);
    printf("População: %i \n", Populacao_A01);
    printf("Área: %.2f \n", Area_A01);
    printf("PIB: %.3f \n", PIB_A01);
-   printf("Número de Pontos Turísticos: %i \n\n", Pontos_Turisticos_A01);
+   printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A01);
    printf("Densidade Populacional: %.2f \n", densidade_A01);
-   printf("PIB Per Capita: %.2f \n", pibpc_A01);
+   printf("PIB Per Capita: %.2f \n\n", pibpc_A01);
 
    printf("Código da Carta: A02\n");
    printf("Cidade 2: %s \n", Cidade_A02);
    printf("População: %i \n", Populacao_A02);
    printf("Área: %.2f \n", Area_A02);
    printf("PIB: %.3f \n", PIB_A02);
-   printf("Número de Pontos Turísticos: %i \n\n", Pontos_Turisticos_A02);
+   printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A02);
    printf("Densidade Populacional: %.2f \n", densidade_A02);
-   printf("PIB Per Capita: %.2f \n", pibpc_A02);
+   printf("PIB Per Capita: %.2f \n\n", pibpc_A02);
 
    printf("Código da Carta: A03\n");
    printf("Cidade 2: %s \n", Cidade_A03);
    printf("População: %i \n", Populacao_A03);
    printf("Área: %.2f \n", Area_A03);
    printf("PIB: %.3f \n", PIB_A03);
-   printf("Número de Pontos Turísticos: %i \n\n", Pontos_Turisticos_A03);
-
+   printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A03);
    printf("Densidade Populacional: %.2f \n", densidade_A03);
    printf("PIB Per Capita: %.2f \n", pibpc_A03);
 
@@ -296,9 +294,217 @@ float pibpc_A04 = PIB_A04 / Populacao_A04;
    printf("Área: %.2f \n", Area_A04);
    printf("PIB: %.3f \n", PIB_A04);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A04);
-
    printf("Densidade Populacional: %.2f \n", densidade_A04);
    printf("PIB Per Capita: %.2f \n\n", pibpc_A04);
+
+
+   //Área de comparação entre cartas
+hcompara:
+//Variáveis
+int carta;
+int a01 = 1;
+int a02 = 2;
+int a03 = 3;
+int a04 = 4;
+int compara;
+
+//criar variável "Poder carta" com o cast
+float pod_a01 = (float) Populacao_A01 + Pontos_Turisticos_A01 + densidade_A01 + pibpc_A01;
+float pod_a02 = (float) Populacao_A02 + Pontos_Turisticos_A02 + densidade_A02 + pibpc_A02;
+float pod_a03 = (float) Populacao_A03 + Pontos_Turisticos_A03 + densidade_A03 + pibpc_A03;
+float pod_a04 = (float) Populacao_A04 + Pontos_Turisticos_A04 + densidade_A04 + pibpc_A04;
+
+//Estabelecer cartas para comparar
+printf("Vamos comparar as cartas cadastradas! Selecione a primeira carta a ser comparada:\n\n");
+printf("1 - A01\n");
+printf("2 - A02\n");
+printf("3 - A03\n");
+printf("4 - A04\n\n\n"); //Perguntar quais cartas deseja comparar
+
+fflush(stdin);
+scanf("%i", &carta);
+
+
+printf("Ótimo! Com qual carta desejas comparar?\n\n");
+printf("1 - A01\n");
+printf("2 - A02\n");
+printf("3 - A03\n");
+printf("4 - A04\n\n\n");
+
+fflush(stdin);
+scanf("%i\n\n", &compara);
+
+
+//Comparações com a carta A01
+if (carta == 1, compara == 1)
+{
+   printf("Você selecionou a mesma carta! tente novamente\n\n");
+   goto hcompara;
+}
+if (carta == 1, compara == 2)
+{
+   if (pod_a01 >= pod_a02)
+   {
+      printf("A carta A01 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a01, pod_a02);
+   }
+   if (pod_a01 <= pod_a02)
+   {
+      printf("A carta A01 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02 ", pod_a01, pod_a02);
+   }
+}
+
+if (carta == 1, compara == 3)
+{
+   if (pod_a01 >= pod_a03)
+   {
+      printf("A carta A01 tem o valor de %.f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A01! ", pod_a01, pod_a03);
+   }
+   if (pod_a01 <= pod_a03)
+   {
+      printf("A carta A01 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03!", pod_a01, pod_a03);
+   }
+}
+
+if (carta == 1, compara == 4)
+{
+   if (pod_a01 >= pod_a04)
+   {
+      printf("A carta A01 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A01! ", pod_a01, pod_a04);
+   }
+   if (pod_a01 <= pod_a04)
+   {
+      printf("A carta A01 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a01, pod_a04);
+   }
+}
+
+//Comparações com a carta A02
+if (carta == 2, compara == 2)
+{
+   printf("Você selecionou a mesma carta! tente novamente\n\n");
+   goto hcompara;
+}
+
+if (carta == 2, compara == 1)
+{
+   if (pod_a02 >= pod_a01)
+   {
+      printf("A carta A02 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A02 ", pod_a02, pod_a01);
+   }
+   if (pod_a02 <= pod_a01)
+   {
+      printf("A carta A02 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a02, pod_a01);
+   }
+}
+
+if (carta == 2, compara == 3)
+{
+   if (pod_a02 >= pod_a03)
+   {
+      printf("A carta A02 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A02! ", pod_a02, pod_a03);
+   }
+   if (pod_a02 <= pod_a03)
+   {
+      printf("A carta A02 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03!", pod_a02, pod_a03);
+   }
+}
+
+if (carta == 2, compara == 4)
+{
+   if (pod_a02 >= pod_a04)
+   {
+      printf("A carta A02 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A02! ", pod_a02, pod_a04);
+   }
+   if (pod_a02 <= pod_a04)
+   {
+      printf("A carta A02 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a02, pod_a04);
+   }
+}
+
+//Comparações com a carta A03
+if (carta == 3, compara == 3)
+{
+   printf("Você selecionou a mesma carta! tente novamente");
+   goto hcompara;
+}
+
+if (carta == 3, compara == 1)
+{
+   if (pod_a03 >= pod_a01)
+   {
+      printf("A carta A03 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A03 ", pod_a03, pod_a01);
+   }
+   if (pod_a03 <= pod_a02)
+   {
+      printf("A carta A03 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a03, pod_a01);
+   }
+}
+
+if (carta == 3, compara == 2)
+{
+   if (pod_a03 >= pod_a02)
+   {
+      printf("A carta A03 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a03, pod_a02);
+   }
+   if (pod_a03 <= pod_a02)
+   {
+      printf("A carta A03 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02!", pod_a03, pod_a02);
+   }
+}
+
+if (carta == 3, compara == 4)
+{
+   if (pod_a03 >= pod_a04)
+   {
+      printf("A carta A03 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a03, pod_a04);
+   }
+   if (pod_a03 <= pod_a04)
+   {
+      printf("A carta A03 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a03, pod_a04);
+   }
+}
+
+//Comparações com a carta A04
+if (carta == 4, compara == 4)
+{
+   printf("Você selecionou a mesma carta! tente novamente");
+   goto hcompara;
+}
+
+if (carta == 4, compara == 1)
+{
+   if (pod_a04 >= pod_a01)
+   {
+      printf("A carta A04 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A04 ", pod_a04, pod_a01);
+   }
+   if (pod_a04 <= pod_a01)
+   {
+      printf("A carta A04 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a04, pod_a01);
+   }
+}
+
+if (carta == 4, compara == 2)
+{
+   if (pod_a04 >= pod_a02)
+   {
+      printf("A carta A04 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a04, pod_a03);
+   }
+   if (pod_a04 <= pod_a02)
+   {
+      printf("A carta A04 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02!", pod_a04, pod_a03);
+   }
+}
+
+if (carta == 4, compara == 3)
+{
+   if (pod_a04 >= pod_a03)
+   {
+      printf("A carta A04 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a04, pod_a03);
+   }
+   if (pod_a04 <= pod_a03)
+   {
+      printf("A carta A04 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a04, pod_a03);
+   }
+}
 
    
    goto cabofim;
@@ -306,9 +512,6 @@ float pibpc_A04 = PIB_A04 / Populacao_A04;
    }
 
 
-//Área de comparação entre cartas
-hcompara:
-printf("teste");
 
 cabofim:
 
