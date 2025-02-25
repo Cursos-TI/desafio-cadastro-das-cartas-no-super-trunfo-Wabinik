@@ -228,6 +228,14 @@ scanf(" %i", &confirma);
    printf("Densidade Populacional: %.2f \n", densidade_A03);
    printf("PIB Per Capita: %.2f \n", pibpc_A03);
 
+   printf("\nGostaria de fazer a comparação entre elas para saber qual é mais forte?\n  ");
+   fflush(stdin);
+   scanf(" %i", &confirma);
+   
+   if (confirma == sim)
+    goto hcompara;
+   else (confirma == nao);
+
     printf("\nDeseja cadastrar mais cartas? digite '1' para sim e '2' para não:\n  ");
     fflush(stdin);
     scanf(" %i", &confirma);
