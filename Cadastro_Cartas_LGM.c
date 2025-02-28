@@ -79,7 +79,7 @@ printf("Para cadastrar as propriedades da primeira cidade desse ESTADO, que ter�
  printf("\nDigite o número de POPULAÇÃO dessa cidade:\n");
  scanf("%i", &Populacao_A01);
 
- printf("\nInforme a ÁREA desta cidade:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.12): \n");
+ printf("\nInforme a ÁREA desta cidade em Km²:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 321.12): \n");
  fflush(stdin);
  scanf("%f", &Area_A01);
 
@@ -98,7 +98,7 @@ printf("Para cadastrar as propriedades da primeira cidade desse ESTADO, que ter�
    printf("Código da Carta: A01\n");
    printf("Cidade 1: %s \n", Cidade_A01);
    printf("População: %i \n", Populacao_A01);
-   printf("Área: %.2f \n", Area_A01);
+   printf("Área: %.2f Km²\n", Area_A01);
    printf("PIB: %.2f \n", PIB_A01);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A01);
    printf("Densidade Populacional: %.2f \n", densidade_A01);
@@ -126,7 +126,7 @@ scanf(" %i", &confirma);
  printf("\nDigite o número de POPULAÇÃO dessa cidade:\n");
  scanf("%i", &Populacao_A02);
 
- printf("\nInforme a ÁREA desta cidade:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.12): \n");
+ printf("\nInforme a ÁREA desta cidade em Km²:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 321.12): \n");
  scanf("%f", &Area_A02);
 
  printf("\nDiga-nos o PIB - Produto Interno Bruto - da cidade \n(utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.120):\n");
@@ -140,12 +140,12 @@ scanf(" %i", &confirma);
  float pibpc_A02 = PIB_A02 / Populacao_A02;
 
 
-  printf("\n \n \nParabéns, sua segunda carta foi cadastrada com SUCESSO! \n \n");
+ printf("\n \n \nParabéns, sua segunda carta foi cadastrada com SUCESSO! \n \n");
 
    printf("Código da Carta: A01\n");
    printf("Cidade 1: %s \n", Cidade_A01);
    printf("População: %i \n", Populacao_A01);
-   printf("Área: %.2f \n", Area_A01);
+   printf("Área: %.2f Km²\n", Area_A01);
    printf("PIB: %.2f \n", PIB_A01);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A01);
    printf("Densidade Populacional: %.2f \n", densidade_A01);
@@ -154,14 +154,14 @@ scanf(" %i", &confirma);
    printf("Código da Carta: A02\n");
    printf("Cidade 2: %s \n", Cidade_A02);
    printf("População: %i \n", Populacao_A02);
-   printf("Área: %.2f \n", Area_A02);
+   printf("Área: %.2f Km²\n", Area_A02);
    printf("PIB: %.2f \n", PIB_A02);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A02);
    printf("Densidade Populacional: %.2f \n", densidade_A02);
    printf("PIB Per Capita: %.2f \n", pibpc_A02);
 
-   printf("\nAgora que já tem duas cartas, gostaria de fazer a comparação entre elas para saber qual é mais forte?\n  ");
-   fflush(stdin);
+   printf("\nAgora que já tem duas cartas, gostaria de fazer a comparação entre elas para saber qual é mais forte?\n Digite 1 para sim e 2 para não: \n ");
+      fflush(stdin);
    scanf(" %i", &confirma);
    
    if (confirma == sim)
@@ -178,6 +178,7 @@ scanf(" %i", &confirma);
       printf("\n\nSiga as instruções abaixo para cadastrar a terceira cidade do ESTADO A: \n");
 
 //Terceira cidade
+cartatreis:
 
  printf("\nDigite o NOME da CIDADE 3 - A03: \n Digite, sem acentos, caracteres especiais ou espaços, o nome para cidade 3 \n");
  fflush(stdin);
@@ -186,7 +187,7 @@ scanf(" %i", &confirma);
  printf("\nDigite o número de POPULAÇÃO dessa cidade:\n");
  scanf("%i", &Populacao_A03);
 
- printf("\nInforme a ÁREA desta cidade:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.12): \n");
+ printf("\nInforme a ÁREA desta cidade em Km²:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 321.12): \n");
  scanf("%f", &Area_A03);
 
  printf("\nDiga-nos o PIB - Produto Interno Bruto - da cidade \n(utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.120):\n");
@@ -204,7 +205,7 @@ scanf(" %i", &confirma);
    printf("Código da Carta: A01\n");
    printf("Cidade 1: %s \n", Cidade_A01);
    printf("População: %i \n", Populacao_A01);
-   printf("Área: %.2f \n", Area_A01);
+   printf("Área: %.2f Km²\n", Area_A01);
    printf("PIB: %.3f \n", PIB_A01);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A01);
    printf("Densidade Populacional: %.2f \n", densidade_A01);
@@ -213,7 +214,7 @@ scanf(" %i", &confirma);
    printf("Código da Carta: A02\n");
    printf("Cidade 2: %s \n", Cidade_A02);
    printf("População: %i \n", Populacao_A02);
-   printf("Área: %.2f \n", Area_A02);
+   printf("Área: %.2f Km²\n", Area_A02);
    printf("PIB: %.3f \n", PIB_A02);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A02);
    printf("Densidade Populacional: %.2f \n", densidade_A02);
@@ -222,7 +223,7 @@ scanf(" %i", &confirma);
    printf("Código da Carta: A03\n");
    printf("Cidade 2: %s \n", Cidade_A03);
    printf("População: %i \n", Populacao_A03);
-   printf("Área: %.2f \n", Area_A03);
+   printf("Área: %.2f Km²\n", Area_A03);
    printf("PIB: %.3f \n", PIB_A03);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A03);
    printf("Densidade Populacional: %.2f \n", densidade_A03);
@@ -246,6 +247,7 @@ scanf(" %i", &confirma);
       printf("\n\nSiga as instruções abaixo para cadastrar a quarta cidade do ESTADO A: \n");
 
 //Quarta cidade
+cartaquatro:
 
  printf("\nDigite o NOME da CIDADE 4: \n Digite, sem acentos, caracteres especiais ou espaços, o nome para cidade 4 \n");
  fflush(stdin);
@@ -254,7 +256,7 @@ scanf(" %i", &confirma);
  printf("\nDigite o número de POPULAÇÃO dessa cidade:\n");
  scanf("%i", &Populacao_A04);
 
- printf("\nInforme a ÁREA desta cidade:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.12): \n");
+ printf("\nInforme a ÁREA desta cidade em Km²:\n (utilize o ponto /./ no lugar da vírgula /,/ Ex.: 321.12): \n");
  scanf("%f", &Area_A04);
 
  printf("\nDiga-nos o PIB - Produto Interno Bruto - da cidade \n(utilize o ponto /./ no lugar da vírgula /,/ Ex.: 10321.120):\n");
@@ -272,7 +274,7 @@ float pibpc_A04 = PIB_A04 / Populacao_A04;
    printf("Código da Carta: A01\n");
    printf("Cidade 1: %s \n", Cidade_A01);
    printf("População: %i \n", Populacao_A01);
-   printf("Área: %.2f \n", Area_A01);
+   printf("Área: %.2f Km²\n", Area_A01);
    printf("PIB: %.3f \n", PIB_A01);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A01);
    printf("Densidade Populacional: %.2f \n", densidade_A01);
@@ -281,7 +283,7 @@ float pibpc_A04 = PIB_A04 / Populacao_A04;
    printf("Código da Carta: A02\n");
    printf("Cidade 2: %s \n", Cidade_A02);
    printf("População: %i \n", Populacao_A02);
-   printf("Área: %.2f \n", Area_A02);
+   printf("Área: %.2f Km²\n", Area_A02);
    printf("PIB: %.3f \n", PIB_A02);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A02);
    printf("Densidade Populacional: %.2f \n", densidade_A02);
@@ -290,7 +292,7 @@ float pibpc_A04 = PIB_A04 / Populacao_A04;
    printf("Código da Carta: A03\n");
    printf("Cidade 2: %s \n", Cidade_A03);
    printf("População: %i \n", Populacao_A03);
-   printf("Área: %.2f \n", Area_A03);
+   printf("Área: %.2f Km²\n", Area_A03);
    printf("PIB: %.3f \n", PIB_A03);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A03);
    printf("Densidade Populacional: %.2f \n", densidade_A03);
@@ -299,11 +301,22 @@ float pibpc_A04 = PIB_A04 / Populacao_A04;
       printf("Código da Carta: A04\n");
    printf("Cidade 2: %s \n", Cidade_A04);
    printf("População: %i \n", Populacao_A04);
-   printf("Área: %.2f \n", Area_A04);
+   printf("Área: %.2f Km²\n", Area_A04);
    printf("PIB: %.3f \n", PIB_A04);
    printf("Número de Pontos Turísticos: %i \n", Pontos_Turisticos_A04);
    printf("Densidade Populacional: %.2f \n", densidade_A04);
    printf("PIB Per Capita: %.2f \n\n", pibpc_A04);
+
+
+
+   printf("\nGostaria de fazer a comparação entre elas para saber qual é mais forte?\n  ");
+   fflush(stdin);
+   scanf(" %i", &confirma);
+   
+   if (confirma == sim)
+    goto hcompara;
+   else (confirma == nao);
+   goto cabofim;
 
 
    //Área de comparação entre cartas
@@ -316,6 +329,8 @@ int a03 = 3;
 int a04 = 4;
 int compara;
 
+int resposta;
+
 //criar variável "Poder carta" com o cast
 float pod_a01 = (float) Populacao_A01 + Pontos_Turisticos_A01 + densidade_A01 + pibpc_A01;
 float pod_a02 = (float) Populacao_A02 + Pontos_Turisticos_A02 + densidade_A02 + pibpc_A02;
@@ -323,7 +338,7 @@ float pod_a03 = (float) Populacao_A03 + Pontos_Turisticos_A03 + densidade_A03 + 
 float pod_a04 = (float) Populacao_A04 + Pontos_Turisticos_A04 + densidade_A04 + pibpc_A04;
 
 //Estabelecer cartas para comparar
-printf("Vamos comparar as cartas cadastradas! Selecione a primeira carta a ser comparada:\n\n");
+printf("\n\nVamos comparar as cartas cadastradas! Selecione a primeira carta a ser comparada:\n\n");
 printf("1 - A01\n");
 printf("2 - A02\n");
 printf("3 - A03\n");
@@ -340,8 +355,9 @@ printf("3 - A03\n");
 printf("4 - A04\n\n\n");
 
 fflush(stdin);
-scanf("%i\n\n", &compara);
+scanf("%i", &compara);
 
+printf("\n\n**** COMPARANDO ***\n\n");
 
 //Comparações com a carta A01
 if (carta == 1, compara == 1)
@@ -353,11 +369,41 @@ if (carta == 1, compara == 2)
 {
    if (pod_a01 >= pod_a02)
    {
-      printf("A carta A01 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a01, pod_a02);
+      printf("A carta A01 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a01, pod_a02); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartatreis;
+      if (resposta == 3)
+      goto cabofim;
    }
    if (pod_a01 <= pod_a02)
    {
-      printf("A carta A01 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02 ", pod_a01, pod_a02);
+      printf("A carta A01 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02 ", pod_a01, pod_a02); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartatreis;
+      if (resposta == 3)
+      goto cabofim;
    }
 }
 
@@ -365,11 +411,41 @@ if (carta == 1, compara == 3)
 {
    if (pod_a01 >= pod_a03)
    {
-      printf("A carta A01 tem o valor de %.f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A01! ", pod_a01, pod_a03);
+      printf("A carta A01 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A01! ", pod_a01, pod_a03); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
    if (pod_a01 <= pod_a03)
    {
-      printf("A carta A01 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03!", pod_a01, pod_a03);
+      printf("A carta A01 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03!", pod_a01, pod_a03); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
 }
 
@@ -377,11 +453,36 @@ if (carta == 1, compara == 4)
 {
    if (pod_a01 >= pod_a04)
    {
-      printf("A carta A01 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A01! ", pod_a01, pod_a04);
+      printf("A carta A01 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A01! ", pod_a01, pod_a04); 
+      
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
+      
    }
    if (pod_a01 <= pod_a04)
    {
-      printf("A carta A01 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a01, pod_a04);
+      printf("A carta A01 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a01, pod_a04); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
 }
 
@@ -396,11 +497,41 @@ if (carta == 2, compara == 1)
 {
    if (pod_a02 >= pod_a01)
    {
-      printf("A carta A02 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A02 ", pod_a02, pod_a01);
+      printf("A carta A02 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A02 ", pod_a02, pod_a01); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartatreis;
+      if (resposta == 3)
+      goto cabofim;
    }
    if (pod_a02 <= pod_a01)
    {
-      printf("A carta A02 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a02, pod_a01);
+      printf("A carta A02 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a02, pod_a01); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartatreis;
+      if (resposta == 3)
+      goto cabofim;
    }
 }
 
@@ -408,11 +539,41 @@ if (carta == 2, compara == 3)
 {
    if (pod_a02 >= pod_a03)
    {
-      printf("A carta A02 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A02! ", pod_a02, pod_a03);
+      printf("A carta A02 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A02! ", pod_a02, pod_a03); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
    if (pod_a02 <= pod_a03)
    {
-      printf("A carta A02 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03!", pod_a02, pod_a03);
+      printf("A carta A02 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03!", pod_a02, pod_a03); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
 }
 
@@ -420,11 +581,35 @@ if (carta == 2, compara == 4)
 {
    if (pod_a02 >= pod_a04)
    {
-      printf("A carta A02 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A02! ", pod_a02, pod_a04);
+      printf("A carta A02 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A02! ", pod_a02, pod_a04); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
    if (pod_a02 <= pod_a04)
    {
-      printf("A carta A02 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a02, pod_a04);
+      printf("A carta A02 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a02, pod_a04); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
 }
 
@@ -439,11 +624,41 @@ if (carta == 3, compara == 1)
 {
    if (pod_a03 >= pod_a01)
    {
-      printf("A carta A03 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A03 ", pod_a03, pod_a01);
+      printf("A carta A03 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A03 ", pod_a03, pod_a01); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
    if (pod_a03 <= pod_a02)
    {
-      printf("A carta A03 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a03, pod_a01);
+      printf("A carta A03 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a03, pod_a01); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
 }
 
@@ -451,11 +666,41 @@ if (carta == 3, compara == 2)
 {
    if (pod_a03 >= pod_a02)
    {
-      printf("A carta A03 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a03, pod_a02);
+      printf("A carta A03 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a03, pod_a02); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
    if (pod_a03 <= pod_a02)
    {
-      printf("A carta A03 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02!", pod_a03, pod_a02);
+      printf("A carta A03 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02!", pod_a03, pod_a02); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Cadastrar outra carta\n");
+      printf("3 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cartaquatro;
+      if (resposta == 3)
+      goto cabofim;
    }
 }
 
@@ -463,11 +708,35 @@ if (carta == 3, compara == 4)
 {
    if (pod_a03 >= pod_a04)
    {
-      printf("A carta A03 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a03, pod_a04);
+      printf("A carta A03 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a03, pod_a04); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
    if (pod_a03 <= pod_a04)
    {
-      printf("A carta A03 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a03, pod_a04);
+      printf("A carta A03 tem o valor de %.2f, e a carta A04 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a03, pod_a04); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
 }
 
@@ -482,11 +751,35 @@ if (carta == 4, compara == 1)
 {
    if (pod_a04 >= pod_a01)
    {
-      printf("A carta A04 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A04 ", pod_a04, pod_a01);
+      printf("A carta A04 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A04 ", pod_a04, pod_a01); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
    if (pod_a04 <= pod_a01)
    {
-      printf("A carta A04 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a04, pod_a01);
+      printf("A carta A04 tem o valor de %.2f, e a carta A01 %.2f. Portanto, a carta \nmais forte é A01 ", pod_a04, pod_a01); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
 }
 
@@ -494,11 +787,35 @@ if (carta == 4, compara == 2)
 {
    if (pod_a04 >= pod_a02)
    {
-      printf("A carta A04 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a04, pod_a03);
+      printf("A carta A04 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a04, pod_a02); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
    if (pod_a04 <= pod_a02)
    {
-      printf("A carta A04 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02!", pod_a04, pod_a03);
+      printf("A carta A04 tem o valor de %.2f, e a carta A02 %.2f. Portanto, a carta \nmais forte é A02!", pod_a04, pod_a02); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
 }
 
@@ -506,11 +823,35 @@ if (carta == 4, compara == 3)
 {
    if (pod_a04 >= pod_a03)
    {
-      printf("A carta A04 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a04, pod_a03);
+      printf("A carta A04 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A04! ", pod_a04, pod_a03);       
+      
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
    if (pod_a04 <= pod_a03)
    {
-      printf("A carta A04 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a04, pod_a03);
+      printf("A carta A04 tem o valor de %.2f, e a carta A03 %.2f. Portanto, a carta \nmais forte é A03! ", pod_a04, pod_a03); 
+
+      printf("\n\nO que deseja fazer agora?\n");
+      printf("1 - Fazer outra comparação\n");
+      printf("2 - Finalizar o Programa\n\n");
+
+fflush(stdin);
+scanf("%i", &resposta);
+
+      if (resposta == 1)
+      goto hcompara;
+      if (resposta == 2)
+      goto cabofim;
    }
 }
 
@@ -522,9 +863,10 @@ if (carta == 4, compara == 3)
 
 
 cabofim:
-
-  return 0;
+  
 printf("\n \nFim do progama, obrigada por utilizá-lo! \n :^D \n");
+
+return 0;
 
 }
 }
