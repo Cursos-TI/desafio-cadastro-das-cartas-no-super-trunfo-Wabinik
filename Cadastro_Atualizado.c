@@ -146,51 +146,91 @@ printf("PIB per capita.: %.2f \n\n\n", pibpera02);
 //Primeiro estado do segundo país
 printf("\nDigite o PAÍS de sua carta:\n");
  fflush(stdin);
- scanf("%s", &paisA);
-//Estrutura if para caso o país seja o mesmo
+ scanf("%s", &paisB);
 
-
- printf("\nDigite o ESTADO da sua primeira carta:\n");
+ printf("\nDigite o ESTADO da sua carta:\n");
  fflush(stdin);
- scanf("%s", &estadoa01);
+ scanf("%s", &estadob01);
 
- printf("\nDigite a CIDADE da sua primeira carta:\n");
+ printf("\nDigite a CIDADE da sua carta:\n");
  fflush(stdin);
- scanf("%s", &cidadea01);
+ scanf("%s", &cidadeb01);
 
  printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):");
  fflush(stdin);
- scanf("%s", &areaa01);
+ scanf("%s", &areab01);
 
  printf("\nDigite a POPULAÇÃO:\n");
  fflush(stdin);
- scanf("%s", &populacaoa01);
+ scanf("%s", &populacaob01);
 
  printf("\nDigite o número de PONTOS TURÍSTICOS:\n");
  fflush(stdin);
- scanf("%s", &ponturia01);
+ scanf("%s", &ponturib01);
 
  printf("\nDigite o PIB - Produto Interno Bruto - (obs.: Usar /./ no lugar de /,/):\n");
  fflush(stdin);
- scanf("%s", &piba01); 
+ scanf("%s", &pibb01); 
 
 
 //Cálculo do pib per capta e densidade demográfica
-float pibpera01 = piba01 / populacaoa01;
-float densidadea01 = populacaoa01 / areaa01;
+float pibperb01 = pibb01 / populacaob01;
+float densidadeb01 = populacaob01 / areab01;
 
 
- //Retorno das informações da primeira carta  */* Será que tem como retornar um bloco de informações específico? */*
- printf("%c - %c\n", paisA, estadoa01);
- printf("%c\n", cidadea01);
- printf("População.: %i\n", populacaoa01);
- printf("Área.: %.2f\n", areaa01);
- printf("Pontos Turísticos.: %i\n", ponturia01);
- printf("PIB.: %.2f\n", piba01);
- printf("Densidade demográfica.: %.2f\n", densidadea01);
- printf("PIB per capita.: %.2f \n\n\n", pibpera01);
+ //Retorno das informações da carta 
+ printf("%c - %c\n", paisB, estadob01);
+ printf("%c\n", cidadeb01);
+ printf("População.: %i\n", populacaob01);
+ printf("Área.: %.2f\n", areab01);
+ printf("Pontos Turísticos.: %i\n", ponturib01);
+ printf("PIB.: %.2f\n", pibb01);
+ printf("Densidade demográfica.: %.2f\n", densidadeb01);
+ printf("PIB per capita.: %.2f \n\n\n", pibperb01);
   
 
+
+
+ //Segundo estado do Segundo país
+ printf("\nDigite o ESTADO da sua carta:\n");
+ fflush(stdin);
+ scanf("%s", &estadob02);
+
+ printf("\nDigite a CIDADE da sua carta:\n");
+ fflush(stdin);
+ scanf("%s", &cidadeb02);
+
+ printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):");
+ fflush(stdin);
+ scanf("%s", &areab02);
+
+ printf("\nDigite a POPULAÇÃO:\n");
+ fflush(stdin);
+ scanf("%s", &populacaob02);
+
+ printf("\nDigite o número de PONTOS TURÍSTICOS:\n");
+ fflush(stdin);
+ scanf("%s", &ponturib02);
+
+ printf("\nDigite o PIB - Produto Interno Bruto - (obs.: Usar /./ no lugar de /,/):\n");
+ fflush(stdin);
+ scanf("%s", &pibb02); 
+
+
+//Cálculo do pib per capta e densidade demográfica
+float pibperb02 = pibb02 / populacaob02;
+float densidadeb02 = populacaob02 / areab02;
+
+
+ //Retorno das informações da primeira carta 
+ printf("%c - %c\n", paisB, estadob02);
+ printf("%c\n", cidadeb02);
+ printf("População.: %i\n", populacaob02);
+ printf("Área.: %.2f\n", areab02);
+ printf("Pontos Turísticos.: %i\n", ponturib02);
+ printf("PIB.: %.2f\n", pibb02);
+ printf("Densidade demográfica.: %.2f\n", densidadeb02);
+ printf("PIB per capita.: %.2f \n\n\n", pibperb02);
 
 
     return 0;
