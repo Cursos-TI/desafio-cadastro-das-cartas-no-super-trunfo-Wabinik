@@ -29,7 +29,11 @@ int main() {
 
 
 //Para decisões 
-int sim = 1, nao = 2;
+int sim = 1, nao = 2, resposta;
+int opc1 = 1, opc2 = 2, opc3 = 3, opc4 = 4, resposta1, resposta2;
+
+//Pontuação das cartas
+int pontocarta1, pontocarta2, pontocarta3, pontocarta4;
 
 
 
@@ -88,19 +92,17 @@ float densidadea01 = populacaoa01 / areaa01;
  printf("Densidade demográfica.: %.2f\n", densidadea01);
  printf("PIB per capita.: %.2f \n\n\n", pibpera01);
 
- //Outros cadastros
+ //Inf. outros cadastros
  printf("Parabéns, você cadastrou sua primeira carta! Que tal cadastrar mais uma para compará-las?\n");
- printf("Este programa tem capacidade para o cadastro de DOIS PAÍSES, cada\num com DOIS ESTADOS, e cada estado com UMA CIDADE.\n\n Selecione O que deseja fazer:");
+ printf("Este programa tem capacidade para o cadastro de DOIS PAÍSES, cada\num com DOIS ESTADOS, e cada estado com UMA CIDADE.\n\n");
 
- printf("1 -  CADASTRAR O SEGUNDO ESTADO DO PAÍS 1");
- printf("3 -  CADASTRAR O PRIMEIRO ESTADO DE OUTRO PAÍS");
-
- //Estrutura de decisão com o GOTO
-
+ printf("Primeiro cadastre o SEGUNDO ESTADO, depois prossiga cadastrando o SEGUNDO PAÍS e seus dois ESTADOS.\n");
+ printf("A partir do segundo cadastro, decidirás se continuarás o cadastro ou irás comparar as cartas. \n");
 
 
 
 //Segundo estado do primeiro país
+printf("Cadastro do segundo estado de %s", paisA);
 printf("\nDigite o ESTADO da sua carta:\n");
 fflush(stdin);
 scanf("%s", &estadoa02);
@@ -141,9 +143,25 @@ printf("PIB.: %.2f\n", piba02);
 printf("Densidade demográfica.: %.2f\n", densidadea02);
 printf("PIB per capita.: %.2f \n\n\n", pibpera02);
 
+//Pergunta para cadastro ou comparação
+printf("Agora já tens cartas para comparar! O que desejas fazer?\n\n");
+printf("1 - COMPARAR MINHAS CARTAS\n");
+printf("2 - CONTINUAR O CADASTRO\n");
+fflush(stdin);
+scanf("%i", &resposta);
+
+
+if (resposta == sim)
+{
+    goto comparacao;
+}
+else
+
+
 
 
 //Primeiro estado do segundo país
+printf("Cadastro do primeiro estado do segundo país");
 printf("\nDigite o PAÍS de sua carta:\n");
  fflush(stdin);
  scanf("%s", &paisB);
@@ -192,6 +210,7 @@ float densidadeb01 = populacaob01 / areab01;
 
 
  //Segundo estado do Segundo país
+ printf("Cadastro do segundo estado de %s", paisB);
  printf("\nDigite o ESTADO da sua carta:\n");
  fflush(stdin);
  scanf("%s", &estadob02);
@@ -231,6 +250,390 @@ float densidadeb02 = populacaob02 / areab02;
  printf("PIB.: %.2f\n", pibb02);
  printf("Densidade demográfica.: %.2f\n", densidadeb02);
  printf("PIB per capita.: %.2f \n\n\n", pibperb02);
+
+
+
+
+ comparacao:
+//Parte de comparações: Seleção de cartas a serem comparadas.
+ printf("Saudações! Este é o seu programa de comparações. Selecione a primeira carta a ser comparada:\n\n");
+ printf("1 -- %s - %s", paisA, estadoa01);
+ printf("2 -- %s - %s", paisA, estadoa02);
+ printf("3 -- %s - %s", paisB, estadob01);
+ printf("4 -- %s - %s", paisB, estadob02);
+ fflush(stdin);
+ scanf("%i", resposta1);
+
+casocartaigual:
+ printf("Agora, selecione a segunda carta a ser comparada:\n\n");
+ printf("1 -- %s - %s", paisA, estadoa01);
+ printf("2 -- %s - %s", paisA, estadoa02);
+ printf("3 -- %s - %s", paisB, estadob01);
+ printf("4 -- %s - %s", paisB, estadob02);
+ fflush(stdin);
+ scanf("%i", resposta2);
+
+ if (resposta1 == 1)
+ {
+    if (resposta2 == 1)
+{
+ printf("Eita! Você selecionou a mesma carta! Tente novamente, escolha cartas DIFERENTES.");
+ goto casocartaigual;
+}
+
+    if (resposta2 == 2) 
+{
+    compara1e2:
+    //Comparação de população
+if (populacaoa01 > populacaoa02) pontocarta1 += 1;
+if (populacaoa01 < populacaoa02) pontocarta2 += 1;
+if (populacaoa01 == populacaoa02) pontocarta1 ++  && pontocarta2 ++ ;
+
+   //Comparação de área pontos turísticos e pib
+if (areaa01 > areaa02) pontocarta1 += 1;
+if (areaa01 < areaa02) pontocarta2 += 1;
+if (areaa01 == areaa02) pontocarta1 ++ && pontocarta2 ++;
+
+   //Comparação de pontos turísticos
+if (ponturia01 > ponturia02) pontocarta1 += 1;
+if (ponturia01 < ponturia02) pontocarta2 += 1;
+if (ponturia01 == ponturia02) pontocarta1 ++ && pontocarta2 ++;
+
+   //Comparação de pib
+if (piba01 > piba02) pontocarta1 += 1;
+if (piba01 < piba02) pontocarta2 += 1;
+if (piba01 == piba02) pontocarta1 ++ && pontocarta2 ++;
+
+    //Comparação de densidade demográfica
+if (densidadea01 > densidadea02) pontocarta1 -= 1;
+if (densidadea01 < densidadea02) pontocarta2 -= 1;
+if (densidadea01 == densidadea02) pontocarta1 -- && pontocarta2 --;
+   
+   //Comparação de pib per capita
+if (pibpera01 > pibpera02) pontocarta1 += 1;
+if (pibpera01 < pibpera02) pontocarta2 += 1;
+if (pibpera01 == pibpera02) pontocarta1 ++ && pontocarta2 ++;
+
+//Resultados:
+//Vitória da primeira
+if (pontocarta1 > pontocarta2)
+{
+    printf("A carta de MAIOR VALOR é: %s - %s \n", paisA, estadoa01);
+}
+//Vitória da segunda
+if (pontocarta1 < pontocarta2)
+{
+    printf("A carta de MAIOR VALOR é: %s - %s \n", paisA, estadoa02);
+}
+//Empate
+if (pontocarta1 == pontocarta2)
+{
+    printf("Empate! As cartas possuem o mesmo valor.");
+}
+}
+////////////////////////////////////////////////////
+if (resposta2 == 3)
+{
+   compara1e3:
+    //Comparação de população
+if (populacaoa01 > populacaob01) pontocarta1 += 1;
+if (populacaoa01 < populacaob01) pontocarta3 += 1;
+if (populacaoa01 == populacaob01) pontocarta1 ++  && pontocarta3 ++ ;
+
+   //Comparação de área pontos turísticos e pib
+if (areaa01 > areab01) pontocarta1 += 1;
+if (areaa01 < areab01) pontocarta3 += 1;
+if (areaa01 == areab01) pontocarta1 ++ && pontocarta3 ++;
+
+   //Comparação de pontos turísticos
+if (ponturia01 > ponturib01) pontocarta1 += 1;
+if (ponturia01 < ponturib01) pontocarta3 += 1;
+if (ponturia01 == ponturib01) pontocarta1 ++ && pontocarta3 ++;
+
+   //Comparação de pib
+if (piba01 > pibb01) pontocarta1 += 1;
+if (piba01 < pibb01) pontocarta3 += 1;
+if (piba01 == pibb01) pontocarta1 ++ && pontocarta3 ++;
+
+    //Comparação de densidade demográfica
+if (densidadea01 > densidadeb01) pontocarta1 -= 1;
+if (densidadea01 < densidadeb01) pontocarta3 -= 1;
+if (densidadea01 == densidadeb01) pontocarta1 -- && pontocarta3 --;
+   
+   //Comparação de pib per capita
+if (pibpera01 > pibperb01) pontocarta1 += 1;
+if (pibpera01 < pibperb01) pontocarta3 += 1;
+if (pibpera01 == pibperb01) pontocarta1 ++ && pontocarta3 ++;
+
+//Resultados:
+//Vitória da primeira
+if (pontocarta1 > pontocarta3)
+{
+    printf("A carta de MAIOR VALOR é: %s - %s \n", paisA, estadoa01);
+}
+//Vitória da segunda
+if (pontocarta1 < pontocarta3)
+{
+    printf("A carta de MAIOR VALOR é: %s - %s \n", paisB, estadob01);
+}
+//Empate
+if (pontocarta1 == pontocarta3)
+{
+    printf("Empate! As cartas possuem o mesmo valor.");
+}
+}
+////////////////////////////////////////////////////
+if (resposta2 == 4)
+{
+   compara1e4:
+    //Comparação de população
+if (populacaoa01 > populacaob02) pontocarta1 += 1;
+if (populacaoa01 < populacaob02) pontocarta4 += 1;
+if (populacaoa01 == populacaob02) pontocarta1 ++  && pontocarta4 ++ ;
+
+   //Comparação de área pontos turísticos e pib
+if (areaa01 > areab02) pontocarta1 += 1;
+if (areaa01 < areab02) pontocarta4 += 1;
+if (areaa01 == areab02) pontocarta1 ++ && pontocarta4 ++;
+
+   //Comparação de pontos turísticos
+if (ponturia01 > ponturib02) pontocarta1 += 1;
+if (ponturia01 < ponturib02) pontocarta4 += 1;
+if (ponturia01 == ponturib02) pontocarta1 ++ && pontocarta4 ++;
+
+   //Comparação de pib
+if (piba01 > pibb02) pontocarta1 += 1;
+if (piba01 < pibb02) pontocarta4 += 1;
+if (piba01 == pibb02) pontocarta1 ++ && pontocarta4 ++;
+
+    //Comparação de densidade demográfica
+if (densidadea01 > densidadeb02) pontocarta1 -= 1;
+if (densidadea01 < densidadeb02) pontocarta4 -= 1;
+if (densidadea01 == densidadeb02) pontocarta1 -- && pontocarta4 --;
+   
+   //Comparação de pib per capita
+if (pibpera01 > pibperb02) pontocarta1 += 1;
+if (pibpera01 < pibperb02) pontocarta4 += 1;
+if (pibpera01 == pibperb02) pontocarta1 ++ && pontocarta4 ++;
+
+//Resultados:
+//Vitória da primeira
+if (pontocarta1 > pontocarta4)
+{
+    printf("A carta de MAIOR VALOR é: %s - %s \n", paisA, estadoa01);
+}
+//Vitória da segunda
+if (pontocarta1 < pontocarta4)
+{
+    printf("A carta de MAIOR VALOR é: %s - %s \n", paisB, estadob02);
+}
+//Empate
+if (pontocarta1 == pontocarta4)
+{
+    printf("Empate! As cartas possuem o mesmo valor.");
+}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+if (resposta1 == 2)
+{
+   if (resposta2 == 2)
+{
+printf("Eita! Você selecionou a mesma carta! Tente novamente, escolha cartas DIFERENTES.");
+goto casocartaigual;
+}
+
+   if (resposta2 == 1)
+{
+   goto compara1e2;
+
+////////////////////////////////////////////////////
+if (resposta2 == 3)
+{
+   compara2e3:
+   //Comparação de população
+if (populacaoa02 > populacaob01) pontocarta2 += 1;
+if (populacaoa02 < populacaob01) pontocarta3 += 1;
+if (populacaoa02 == populacaob01) pontocarta2 ++  && pontocarta3 ++ ;
+
+  //Comparação de área pontos turísticos e pib
+if (areaa02 > areab01) pontocarta2 += 1;
+if (areaa02 < areab01) pontocarta3 += 1;
+if (areaa02 == areab01) pontocarta2 ++ && pontocarta3 ++;
+
+  //Comparação de pontos turísticos
+if (ponturia02 > ponturib01) pontocarta2 += 1;
+if (ponturia02 < ponturib01) pontocarta3 += 1;
+if (ponturia02 == ponturib01) pontocarta2 ++ && pontocarta3 ++;
+
+  //Comparação de pib
+if (piba02 > pibb01) pontocarta2 += 1;
+if (piba02 < pibb01) pontocarta3 += 1;
+if (piba02 == pibb01) pontocarta2 ++ && pontocarta3 ++;
+
+   //Comparação de densidade demográfica
+if (densidadea02 > densidadeb01) pontocarta2 -= 1;
+if (densidadea02 < densidadeb01) pontocarta3 -= 1;
+if (densidadea02 == densidadeb01) pontocarta2 -- && pontocarta3 --;
+  
+  //Comparação de pib per capita
+if (pibpera02 > pibperb01) pontocarta2 += 1;
+if (pibpera02 < pibperb01) pontocarta3 += 1;
+if (pibpera02 == pibperb01) pontocarta2 ++ && pontocarta3 ++;
+
+//Resultados:
+//Vitória da primeira
+if (pontocarta2 > pontocarta3)
+{
+   printf("A carta de MAIOR VALOR é: %s - %s \n", paisA, estadoa02);
+}
+//Vitória da segunda
+if (pontocarta2 < pontocarta3)
+{
+   printf("A carta de MAIOR VALOR é: %s - %s \n", paisB, estadob01);
+}
+//Empate
+if (pontocarta2 == pontocarta3)
+{
+   printf("Empate! As cartas possuem o mesmo valor.");
+}
+}
+////////////////////////////////////////////////////
+if (resposta2 == 4)
+{
+   compara2e4:
+   //Comparação de população
+if (populacaoa02 > populacaob02) pontocarta2 += 1;
+if (populacaoa02 < populacaob02) pontocarta4 += 1;
+if (populacaoa02 == populacaob02) pontocarta2 ++  && pontocarta4 ++ ;
+
+  //Comparação de área pontos turísticos e pib
+if (areaa02 > areab02) pontocarta2 += 1;
+if (areaa02 < areab02) pontocarta4 += 1;
+if (areaa02 == areab02) pontocarta2 ++ && pontocarta4 ++;
+
+  //Comparação de pontos turísticos
+if (ponturia02 > ponturib02) pontocarta2 += 1;
+if (ponturia02 < ponturib02) pontocarta4 += 1;
+if (ponturia02 == ponturib02) pontocarta2 ++ && pontocarta4 ++;
+
+  //Comparação de pib
+if (piba02 > pibb02) pontocarta2 += 1;
+if (piba02 < pibb02) pontocarta4 += 1;
+if (piba02 == pibb02) pontocarta2 ++ && pontocarta4 ++;
+
+   //Comparação de densidade demográfica
+if (densidadea02 > densidadeb02) pontocarta2 -= 1;
+if (densidadea02 < densidadeb02) pontocarta4 -= 1;
+if (densidadea02 == densidadeb02) pontocarta2 -- && pontocarta4 --;
+  
+  //Comparação de pib per capita
+if (pibpera02 > pibperb02) pontocarta2 += 1;
+if (pibpera02 < pibperb02) pontocarta4 += 1;
+if (pibpera02 == pibperb02) pontocarta2 ++ && pontocarta4 ++;
+
+//Resultados:
+//Vitória da primeira
+if (pontocarta2 > pontocarta4)
+{
+   printf("A carta de MAIOR VALOR é: %s - %s \n", paisA, estadoa02);
+}
+//Vitória da segunda
+if (pontocarta2 < pontocarta4)
+{
+   printf("A carta de MAIOR VALOR é: %s - %s \n", paisB, estadob02);
+}
+//Empate
+if (pontocarta2 == pontocarta4)
+{
+   printf("Empate! As cartas possuem o mesmo valor.");
+}
+//////////////////////////////////////////////////////////////////////////////////
+
+
+if (resposta1 == 3)
+{
+   if (resposta2 == 3)
+{
+printf("Eita! Você selecionou a mesma carta! Tente novamente, escolha cartas DIFERENTES.");
+goto casocartaigual;
+}
+
+   if (resposta2 == 1)
+{
+   goto compara1e3;
+
+////////////////////////////////////////////////////
+if (resposta2 == 2) goto compara2e3;
+
+if (resposta2 == 4)
+{
+   compara3e4:
+   //Comparação de população
+if (populacaob01 > populacaob02) pontocarta3 += 1;
+if (populacaob01 < populacaob02) pontocarta4 += 1;
+if (populacaob01 == populacaob02) pontocarta3 ++  && pontocarta4 ++ ;
+
+  //Comparação de área pontos turísticos e pib
+  if (areab01 > areab02) pontocarta3 += 1;
+  if (areab01 < areab02) pontocarta4 += 1;
+  if (areab01 == areab02) pontocarta3 ++ && pontocarta4 ++;
+  
+    //Comparação de pontos turísticos
+  if (ponturib01 > ponturib02) pontocarta3 += 1;
+  if (ponturib01 < ponturib02) pontocarta4 += 1;
+  if (ponturib01 == ponturib02) pontocarta3 ++ && pontocarta4 ++;
+  
+    //Comparação de pib
+  if (pibb01 > pibb02) pontocarta3 += 1;
+  if (pibb01 < pibb02) pontocarta4 += 1;
+  if (pibb01 == pibb02) pontocarta3 ++ && pontocarta4 ++;
+  
+     //Comparação de densidade demográfica
+  if (densidadeb01 > densidadeb02) pontocarta3 -= 1;
+  if (densidadeb01 < densidadeb02) pontocarta4 -= 1;
+  if (densidadeb01 == densidadeb02) pontocarta3 -- && pontocarta4 --;
+    
+    //Comparação de pib per capita
+  if (pibperb01 > pibperb02) pontocarta3 += 1;
+  if (pibperb01 < pibperb02) pontocarta4 += 1;
+  if (pibperb01 == pibperb02) pontocarta3 ++ && pontocarta4 ++;
+  
+  //Resultados:
+  //Vitória da primeira
+  if (pontocarta3 > pontocarta4)
+  {
+     printf("A carta de MAIOR VALOR é: %s - %s \n", paisB, estadob01);
+  }
+  //Vitória da segunda
+  if (pontocarta3 < pontocarta4)
+  {
+     printf("A carta de MAIOR VALOR é: %s - %s \n", paisB, estadob02);
+  }
+  //Empate
+  if (pontocarta3 == pontocarta4)
+  {
+     printf("Empate! As cartas possuem o mesmo valor.");
+  }
+}
+
+if (resposta1 == 4)
+{
+   if (resposta2 == 4)
+   {
+      printf("Eita! Você selecionou a mesma carta! Tente novamente, escolha cartas DIFERENTES.");
+   goto casocartaigual;
+   }
+   if (resposta2 == 1) goto compara1e4;
+   if (resposta2 == 2) goto compara2e4;
+   if (resposta2 == 3) goto compara3e4;
+}
+
+////////////////////////////////////////////////////
+}
+}}}
+
+}
+}
 
 
     return 0;
