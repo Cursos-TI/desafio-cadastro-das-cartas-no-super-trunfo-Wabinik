@@ -496,38 +496,33 @@ casocartaigual:
     if (resposta2 == 2) 
 {
     compara1e2:
+    pontocarta1 = 0; // Zerar o valor das cartas para que não corra o risco de receber os valores dde comparações passadas.
+    pontocarta2 = 0;
     //Comparação de população // mudar para a estrutura de comparação simples
-//Aqui seria o que? "populaçãoa01 > populaçaoa02 ?  pontocarta1 += 1 : pontocarta2 += 1". Se os atributos forem iguais, nada se acrescenta 
-//if (populacaoa01 > populacaoa02) pontocarta1 += 1;
-resultado = (populacaoa01 > populacaoa02) ? pontocarta1 += 1 : pontocarta2 += 1;
-//if (populacaoa01 < populacaoa02) pontocarta2 += 1;
-//if (populacaoa01 == populacaoa02) pontocarta1 ++  && pontocarta2 ++ ;
-
+//Aqui seria o que? "populaçãoa01 > populaçaoa02 ?  pontocarta1 += 1 : pontocarta2 += 1". Se os atributos forem iguais, nada se acrescenta.
+if (populacaoa01 > populacaoa02) pontocarta1 += 1;
+if (populacaoa01 < populacaoa02) pontocarta2 += 1;
+else;
    //Comparação de área pontos turísticos e pib
 if (areaa01 > areaa02) pontocarta1 += 1;
 if (areaa01 < areaa02) pontocarta2 += 1;
-if (areaa01 == areaa02) pontocarta1 ++ && pontocarta2 ++;
-
+else;
    //Comparação de pontos turísticos
 if (ponturia01 > ponturia02) pontocarta1 += 1;
 if (ponturia01 < ponturia02) pontocarta2 += 1;
-if (ponturia01 == ponturia02) pontocarta1 ++ && pontocarta2 ++;
-
+else;
    //Comparação de pib
 if (piba01 > piba02) pontocarta1 += 1;
 if (piba01 < piba02) pontocarta2 += 1;
-if (piba01 == piba02) pontocarta1 ++ && pontocarta2 ++;
-
+else;
     //Comparação de densidade demográfica
 if (densidadea01 > densidadea02) pontocarta1 -= 1;
 if (densidadea01 < densidadea02) pontocarta2 -= 1;
-if (densidadea01 == densidadea02) pontocarta1 -- && pontocarta2 --;
-   
+else;
    //Comparação de pib per capita
 if (pibpera01 > pibpera02) pontocarta1 += 1;
 if (pibpera01 < pibpera02) pontocarta2 += 1;
-if (pibpera01 == pibpera02) pontocarta1 ++ && pontocarta2 ++;
-
+else;
 //Resultados:
 //Vitória da primeira
 if (pontocarta1 > pontocarta2)
@@ -549,36 +544,32 @@ if (pontocarta1 == pontocarta2)
 if (resposta2 == 3)
 {
    compara1e3:
+   pontocarta1 = 0; // Zerar o valor das cartas para que não corra o risco de receber os valores dde comparações passadas.
+   pontocarta3 = 0;
     //Comparação de população
 if (populacaoa01 > populacaob01) pontocarta1 += 1;
 if (populacaoa01 < populacaob01) pontocarta3 += 1;
-if (populacaoa01 == populacaob01) pontocarta1 ++  && pontocarta3 ++ ;
-
+else;
    //Comparação de área pontos turísticos e pib
 if (areaa01 > areab01) pontocarta1 += 1;
 if (areaa01 < areab01) pontocarta3 += 1;
-if (areaa01 == areab01) pontocarta1 ++ && pontocarta3 ++;
-
+else;
    //Comparação de pontos turísticos
 if (ponturia01 > ponturib01) pontocarta1 += 1;
 if (ponturia01 < ponturib01) pontocarta3 += 1;
-if (ponturia01 == ponturib01) pontocarta1 ++ && pontocarta3 ++;
-
+else;
    //Comparação de pib
 if (piba01 > pibb01) pontocarta1 += 1;
 if (piba01 < pibb01) pontocarta3 += 1;
-if (piba01 == pibb01) pontocarta1 ++ && pontocarta3 ++;
-
+else;
     //Comparação de densidade demográfica
 if (densidadea01 > densidadeb01) pontocarta1 -= 1;
 if (densidadea01 < densidadeb01) pontocarta3 -= 1;
-if (densidadea01 == densidadeb01) pontocarta1 -- && pontocarta3 --;
-   
+else;
    //Comparação de pib per capita
 if (pibpera01 > pibperb01) pontocarta1 += 1;
 if (pibpera01 < pibperb01) pontocarta3 += 1;
-if (pibpera01 == pibperb01) pontocarta1 ++ && pontocarta3 ++;
-
+else;
 //Resultados:
 //Vitória da primeira
 if (pontocarta1 > pontocarta3)
@@ -603,33 +594,27 @@ if (resposta2 == 4)
     //Comparação de população
 if (populacaoa01 > populacaob02) pontocarta1 += 1;
 if (populacaoa01 < populacaob02) pontocarta4 += 1;
-if (populacaoa01 == populacaob02) pontocarta1 ++  && pontocarta4 ++ ;
-
+else;
    //Comparação de área pontos turísticos e pib
 if (areaa01 > areab02) pontocarta1 += 1;
 if (areaa01 < areab02) pontocarta4 += 1;
-if (areaa01 == areab02) pontocarta1 ++ && pontocarta4 ++;
-
+else;
    //Comparação de pontos turísticos
 if (ponturia01 > ponturib02) pontocarta1 += 1;
 if (ponturia01 < ponturib02) pontocarta4 += 1;
-if (ponturia01 == ponturib02) pontocarta1 ++ && pontocarta4 ++;
-
+else;
    //Comparação de pib
 if (piba01 > pibb02) pontocarta1 += 1;
 if (piba01 < pibb02) pontocarta4 += 1;
-if (piba01 == pibb02) pontocarta1 ++ && pontocarta4 ++;
-
+else;
     //Comparação de densidade demográfica
 if (densidadea01 > densidadeb02) pontocarta1 -= 1;
 if (densidadea01 < densidadeb02) pontocarta4 -= 1;
-if (densidadea01 == densidadeb02) pontocarta1 -- && pontocarta4 --;
-   
+else;
    //Comparação de pib per capita
 if (pibpera01 > pibperb02) pontocarta1 += 1;
 if (pibpera01 < pibperb02) pontocarta4 += 1;
-if (pibpera01 == pibperb02) pontocarta1 ++ && pontocarta4 ++;
-
+else;
 //Resultados:
 //Vitória da primeira
 if (pontocarta1 > pontocarta4)
@@ -718,33 +703,27 @@ if (resposta2 == 4)
    //Comparação de população
 if (populacaoa02 > populacaob02) pontocarta2 += 1;
 if (populacaoa02 < populacaob02) pontocarta4 += 1;
-if (populacaoa02 == populacaob02) pontocarta2 ++  && pontocarta4 ++ ;
-
+else;
   //Comparação de área pontos turísticos e pib
 if (areaa02 > areab02) pontocarta2 += 1;
 if (areaa02 < areab02) pontocarta4 += 1;
-if (areaa02 == areab02) pontocarta2 ++ && pontocarta4 ++;
-
+else;
   //Comparação de pontos turísticos
 if (ponturia02 > ponturib02) pontocarta2 += 1;
 if (ponturia02 < ponturib02) pontocarta4 += 1;
-if (ponturia02 == ponturib02) pontocarta2 ++ && pontocarta4 ++;
-
+else;
   //Comparação de pib
 if (piba02 > pibb02) pontocarta2 += 1;
 if (piba02 < pibb02) pontocarta4 += 1;
-if (piba02 == pibb02) pontocarta2 ++ && pontocarta4 ++;
-
+else;
    //Comparação de densidade demográfica
 if (densidadea02 > densidadeb02) pontocarta2 -= 1;
 if (densidadea02 < densidadeb02) pontocarta4 -= 1;
-if (densidadea02 == densidadeb02) pontocarta2 -- && pontocarta4 --;
-  
+else;  
   //Comparação de pib per capita
 if (pibpera02 > pibperb02) pontocarta2 += 1;
 if (pibpera02 < pibperb02) pontocarta4 += 1;
-if (pibpera02 == pibperb02) pontocarta2 ++ && pontocarta4 ++;
-
+else;
 //Resultados:
 //Vitória da primeira
 if (pontocarta2 > pontocarta4)
@@ -785,33 +764,27 @@ if (resposta2 == 4)
    //Comparação de população
 if (populacaob01 > populacaob02) pontocarta3 += 1;
 if (populacaob01 < populacaob02) pontocarta4 += 1;
-if (populacaob01 == populacaob02) pontocarta3 ++  && pontocarta4 ++ ;
-
+else;
   //Comparação de área pontos turísticos e pib
   if (areab01 > areab02) pontocarta3 += 1;
   if (areab01 < areab02) pontocarta4 += 1;
-  if (areab01 == areab02) pontocarta3 ++ && pontocarta4 ++;
-  
+else;  
     //Comparação de pontos turísticos
   if (ponturib01 > ponturib02) pontocarta3 += 1;
   if (ponturib01 < ponturib02) pontocarta4 += 1;
-  if (ponturib01 == ponturib02) pontocarta3 ++ && pontocarta4 ++;
-  
+else;  
     //Comparação de pib
   if (pibb01 > pibb02) pontocarta3 += 1;
   if (pibb01 < pibb02) pontocarta4 += 1;
-  if (pibb01 == pibb02) pontocarta3 ++ && pontocarta4 ++;
-  
+else;  
      //Comparação de densidade demográfica
   if (densidadeb01 > densidadeb02) pontocarta3 -= 1;
   if (densidadeb01 < densidadeb02) pontocarta4 -= 1;
-  if (densidadeb01 == densidadeb02) pontocarta3 -- && pontocarta4 --;
-    
+else;    
     //Comparação de pib per capita
   if (pibperb01 > pibperb02) pontocarta3 += 1;
   if (pibperb01 < pibperb02) pontocarta4 += 1;
-  if (pibperb01 == pibperb02) pontocarta3 ++ && pontocarta4 ++;
-  
+else;  
   //Resultados:
   //Vitória da primeira
   if (pontocarta3 > pontocarta4)
