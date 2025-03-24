@@ -3,6 +3,8 @@
 
 //Parte 1: Nível novato - Base do código com estruturas IF e ELSE.
 //Parte 2: Nível Aventureiro - Criar menu interativo com SWITCH e excluir ANINHAMENTOS. 17/03/2025
+//Parte 3: Nível Mestre - Usar diferentes tipos de estruturas de decisão e bem documentar o código para melhor visualização. 24/03/2025
+         //Nota.: Não consegui uma ocasião para usar o operador ternário :(
 
 //Variáveis de 4 cartas
 
@@ -17,7 +19,7 @@ int main() {
  //Estados
  char estadoa01, estadoa02, estadob01, estadob02 [36]; //Também parece difícil lembrar como declarar essa variável
 
- //Cidades - cidade = pais + estado
+ //Cidades - cidade = pais e estado
  char cidadea01, cidadea02, cidadeb01, cidadeb02 [36];
 
  //Características inteiras das cidades
@@ -26,16 +28,18 @@ int main() {
 
  //Características com vírgula das cidades
  float piba01, piba02, pibb01, pibb02;
- int areaa01, areaa02, areab01, areab02;
+ float areaa01, areaa02, areab01, areab02;
 
 
 //Para decisões 
 int sim = 1, nao = 2, resposta;
 int opc1 = 1, opc2 = 2, opc3 = 3, opc4 = 4, resposta1, resposta2;
-int menu /*opcmenu1 = 1, opcmenu2 = 2, opcmenu3 = 3, opcmenu4 = 4*/;
+int menu;
 
 //Pontuação das cartas
 int pontocarta1, pontocarta2, pontocarta3, pontocarta4, resultado;
+
+//Opção de pular, caso a pessoa já tenha cadastrado 
 
 
 
@@ -45,17 +49,16 @@ int pontocarta1, pontocarta2, pontocarta3, pontocarta4, resultado;
  
  //Início do cadastro de cartas //Menu interativo
  menu:
- printf("Selecione o que desejas fazer.:\n\n");
+printf("Selecione o que desejas fazer.:\n\n");
 printf("1 - VER REGRAS\n");
 printf("2 - CADASTRAR PAÍS\n");
-
 
 fflush(stdin);
 scanf("%i", &menu);
 
 switch (menu)
 {
-case 1: //Havia colocado a variável opcmenu1, que tinha valor 1, mas pelo visto, a variável não era necessário.
+case 1: //Havia colocado a variável opcmenu1, que tinha valor 1, mas pelo visto, a variável não era necessário. //Não sabia usar o switch
 printf("REGRAS DO JOGO\n\n");
 printf("DO CADASTRO:.\n\n");
 printf("  Digite o nome de PAÍS, ESTADOS e CIDADES sem espaços, caracteres \nespeciais ou acentos. Exemplo.: São Gonçalo -> SaoGoncalo.\n");
@@ -65,7 +68,6 @@ printf("  Para comparar cartas, é necessário cadastrar ao menos duas cartas.\n
 printf("1 - Se o atributo de uma carta for maior que o da outra, lhe é\nacrescentado um ponto (+1)\n");
 printf("2 - Se os atributos tiverem o mesmo valor, não se acrescenta nada (+0)\n");
 printf("São atributos das cartas: ÁREA, POPULAÇÃO, PONTOS TURÍSTICOS, PIB,\nDENSIDADE DEMOGRÁFICA e PIB PER CAPITA\n\n");
-
 goto menu;
 
 case 2:
@@ -90,7 +92,7 @@ cadastropais:
 
 
 //Opções de escolha dos próximos passos
-printf("Selecione o que desejas fazer.:\n\n");
+printf("\n\nSelecione o que desejas fazer.:\n\n");
 printf("1 - VOLTAR AO MENU\n");
 printf("2 - CADASTRAR SEGUNDO PAÍS\n");
 printf("3 - CADASTRAR PRIMEIRO ESTADO E CIDADE\n");
@@ -127,13 +129,13 @@ cadastroestadoa01:
  fflush(stdin);
  scanf("%s", &cidadea01);
 
- printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):");
+ printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):\n");
  fflush(stdin);
  scanf("%f", &areaa01);
 
  printf("\nDigite a POPULAÇÃO:\n");
  fflush(stdin);
- scanf("%s", &populacaoa01);
+ scanf("%i", &populacaoa01);
 
  printf("\nDigite o número de PONTOS TURÍSTICOS:\n");
  fflush(stdin);
@@ -150,8 +152,8 @@ float densidadea01 = populacaoa01 / areaa01;
 
 
  //Retorno das informações da primeira carta  */* Será que tem como retornar um bloco de informações específico? */*
- printf("%c - %c\n", paisA, estadoa01);
- printf("%c\n", cidadea01);
+ printf("%s - %s\n", paisA, estadoa01);
+ printf("%s\n", cidadea01);
  printf("População.: %i\n", populacaoa01);
  printf("Área.: %.2f\n", areaa01);
  printf("Pontos Turísticos.: %i\n", ponturia01);
@@ -163,7 +165,7 @@ float densidadea01 = populacaoa01 / areaa01;
  printf("Parabéns, você cadastrou sua primeira carta! Que tal cadastrar mais uma para compará-las?\n");
 //Opções de escolha dos próximos passos
 opcpaisa01:
-printf("Selecione o que desejas fazer.:\n\n");
+printf("\n\nSelecione o que desejas fazer.:\n\n");
 printf("1 - VOLTAR AO MENU\n");
 printf("2 - CADASTRAR SEGUNDO PAÍS\n");
 printf("3 - CADASTRAR SEGUNDO ESTADO E CIDADE\n");
@@ -202,21 +204,21 @@ printf("\nDigite a CIDADE da sua carta:\n");
 fflush(stdin);
 scanf("%s", &cidadea02);
 
-printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):");
+printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):\n");
 fflush(stdin);
-scanf("%s", &areaa02);
+scanf("%f", &areaa02);
 
 printf("\nDigite a POPULAÇÃO:\n");
 fflush(stdin);
-scanf("%s", &populacaoa02);
+scanf("%i", &populacaoa02);
 
 printf("\nDigite o número de PONTOS TURÍSTICOS:\n");
 fflush(stdin);
-scanf("%s", &ponturia02);
+scanf("%i", &ponturia02);
 
 printf("\nDigite o PIB - Produto Interno Bruto - (obs.: Usar /./ no lugar de /,/):\n");
 fflush(stdin);
-scanf("%s", &piba02); 
+scanf("%f", &piba02); 
 
 
 //Cálculo do pib per capta e densidade demográfica
@@ -224,9 +226,9 @@ float pibpera02 = piba02 / populacaoa02;
 float densidadea02 = populacaoa02 / areaa02;
 
 
-//Retorno das informações da primeira carta
-printf("%c - %c\n", paisA, estadoa02);
-printf("%c\n", cidadea02);
+//Retorno das informações da segunda carta
+printf("%s - %s\n", paisA, estadoa02);
+printf("%s\n", cidadea02);
 printf("População.: %i\n", populacaoa02);
 printf("Área.: %.2f\n", areaa02);
 printf("Pontos Turísticos.: %i\n", ponturia02);
@@ -237,7 +239,7 @@ printf("PIB per capita.: %.2f \n\n\n", pibpera02);
 //Pergunta para cadastro ou comparação
 printf("Agora já tens cartas para comparar! O que desejas fazer?\n\n");
 opcpaisa02:
-printf("Selecione o que desejas fazer.:\n\n");
+printf("\n\nSelecione o que desejas fazer.:\n\n");
 printf("1 - VOLTAR AO MENU\n");
 printf("2 - CADASTRAR SEGUNDO PAÍS\n");
 printf("3 - COMPARAR CARTAS CADASTRADAS\n");
@@ -275,7 +277,7 @@ printf("\nDigite o PAÍS de sua carta:\n");
  scanf("%s", &paisB);
 
  opcpaisb:
-printf("Selecione o que desejas fazer.:\n\n");
+printf("\n\nSelecione o que desejas fazer.:\n\n");
 printf("1 - VOLTAR AO MENU\n");
 printf("2 - CADASTRAR PRIMEIRO ESTADO E CIDADE\n");
 printf("3 - CADASTRAR PRIMEIRO ESTADO E CIDADE DO PRIMEIRO PAÍS\n");
@@ -318,21 +320,21 @@ cadastroestadob01:
  fflush(stdin);
  scanf("%s", &cidadeb01);
 
- printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):");
+ printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):\n");
  fflush(stdin);
- scanf("%s", &areab01);
+ scanf("%f", &areab01);
 
  printf("\nDigite a POPULAÇÃO:\n");
  fflush(stdin);
- scanf("%s", &populacaob01);
+ scanf("%i", &populacaob01);
 
  printf("\nDigite o número de PONTOS TURÍSTICOS:\n");
  fflush(stdin);
- scanf("%s", &ponturib01);
+ scanf("%i", &ponturib01);
 
  printf("\nDigite o PIB - Produto Interno Bruto - (obs.: Usar /./ no lugar de /,/):\n");
  fflush(stdin);
- scanf("%s", &pibb01); 
+ scanf("%f", &pibb01); 
 
 
 //Cálculo do pib per capta e densidade demográfica
@@ -341,8 +343,8 @@ float densidadeb01 = populacaob01 / areab01;
 
 
  //Retorno das informações da carta 
- printf("%c - %c\n", paisB, estadob01);
- printf("%c\n", cidadeb01);
+ printf("%s - %s\n", paisB, estadob01);
+ printf("%s\n", cidadeb01);
  printf("População.: %i\n", populacaob01);
  printf("Área.: %.2f\n", areab01);
  printf("Pontos Turísticos.: %i\n", ponturib01);
@@ -352,7 +354,7 @@ float densidadeb01 = populacaob01 / areab01;
   
 
  opcestadob01:
- printf("Selecione o que desejas fazer agora.:\n\n");
+ printf("\n\nSelecione o que desejas fazer agora.:\n\n");
  printf("1 - VOLTAR AO MENU\n");
  printf("2 - CADASTRAR SEGUNDO ESTADO E CIDADE\n");
  printf("3 - CADASTRAR PRIMEIRO ESTADO E CIDADE DO PRIMEIRO PAÍS\n");
@@ -398,21 +400,21 @@ float densidadeb01 = populacaob01 / areab01;
  fflush(stdin);
  scanf("%s", &cidadeb02);
 
- printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):");
+ printf("\nDigite a AREA em KM (obs.: Usar /./ no lugar de /,/):\n");
  fflush(stdin);
- scanf("%s", &areab02);
+ scanf("%f", &areab02);
 
  printf("\nDigite a POPULAÇÃO:\n");
  fflush(stdin);
- scanf("%s", &populacaob02);
+ scanf("%i", &populacaob02);
 
  printf("\nDigite o número de PONTOS TURÍSTICOS:\n");
  fflush(stdin);
- scanf("%s", &ponturib02);
+ scanf("%i", &ponturib02);
 
  printf("\nDigite o PIB - Produto Interno Bruto - (obs.: Usar /./ no lugar de /,/):\n");
  fflush(stdin);
- scanf("%s", &pibb02); 
+ scanf("%f", &pibb02); 
 
 
 //Cálculo do pib per capta e densidade demográfica
@@ -421,8 +423,8 @@ float densidadeb02 = populacaob02 / areab02;
 
 
  //Retorno das informações da primeira carta 
- printf("%c - %c\n", paisB, estadob02);
- printf("%c\n", cidadeb02);
+ printf("%s - %s\n", paisB, estadob02);
+ printf("%s\n", cidadeb02);
  printf("População.: %i\n", populacaob02);
  printf("Área.: %.2f\n", areab02);
  printf("Pontos Turísticos.: %i\n", ponturib02);
@@ -432,7 +434,7 @@ float densidadeb02 = populacaob02 / areab02;
 
 
  opcestadob02:
- printf("Selecione o que desejas fazer agora.:\n\n");
+ printf("\n\nSelecione o que desejas fazer agora.:\n\n");
  printf("1 - VOLTAR AO MENU\n");
  printf("2 - CADASTRAR PRIMEIRO ESTADO E CIDADE DO PRIMEIRO PAÍS\n");
  printf("3 - CADASTRAR SEGUNDO ESTADO E CIDADE DO PRIMEIRO PAÍS\n");
@@ -496,7 +498,7 @@ casocartaigual:
     if (resposta2 == 2) 
 {
     compara1e2:
-    pontocarta1 = 0; // Zerar o valor das cartas para que não corra o risco de receber os valores dde comparações passadas.
+    pontocarta1 = 0; // Zerar o valor das cartas para que não corra o risco de receber os valores de comparações passadas.
     pontocarta2 = 0;
     //Comparação de população // mudar para a estrutura de comparação simples
 //Aqui seria o que? "populaçãoa01 > populaçaoa02 ?  pontocarta1 += 1 : pontocarta2 += 1". Se os atributos forem iguais, nada se acrescenta.
@@ -544,7 +546,7 @@ if (pontocarta1 == pontocarta2)
 if (resposta2 == 3)
 {
    compara1e3:
-   pontocarta1 = 0; // Zerar o valor das cartas para que não corra o risco de receber os valores dde comparações passadas.
+   pontocarta1 = 0; 
    pontocarta3 = 0;
     //Comparação de população
 if (populacaoa01 > populacaob01) pontocarta1 += 1;
@@ -591,6 +593,8 @@ if (pontocarta1 == pontocarta3)
 if (resposta2 == 4)
 {
    compara1e4:
+   pontocarta1 = 0;
+   pontocarta4 = 0;
     //Comparação de população
 if (populacaoa01 > populacaob02) pontocarta1 += 1;
 if (populacaoa01 < populacaob02) pontocarta4 += 1;
@@ -649,6 +653,8 @@ goto casocartaigual;
 if (resposta2 == 3)
 {
    compara2e3:
+   pontocarta2 = 0;
+   pontocarta3 = 0;
    //Comparação de população
 if (populacaoa02 > populacaob01) pontocarta2 += 1;
 if (populacaoa02 < populacaob01) pontocarta3 += 1;
@@ -700,6 +706,8 @@ else
 if (resposta2 == 4)
 {
    compara2e4:
+   pontocarta2 = 0;
+   pontocarta4 = 0;
    //Comparação de população
 if (populacaoa02 > populacaob02) pontocarta2 += 1;
 if (populacaoa02 < populacaob02) pontocarta4 += 1;
@@ -761,6 +769,8 @@ if (resposta2 == 2) goto compara2e3;
 if (resposta2 == 4)
 {
    compara3e4:
+   pontocarta3 = 0;
+   pontocarta4 = 0;
    //Comparação de população
 if (populacaob01 > populacaob02) pontocarta3 += 1;
 if (populacaob01 < populacaob02) pontocarta4 += 1;
@@ -816,12 +826,58 @@ if (resposta1 == 4)
 }
 
 ////////////////////////////////////////////////////
-}
-}}}
+}}}}}
+opccompara:
+printf("Muito bem! Agora, para onde desejas ir?\n\n");
+printf("1 - MENU\n");
+printf("2 - PAÍS 1, ESTADO 2\n");
+printf("3 - PAIS 2\n");
+printf("4 - PAIS 2, ESTADO 1\n");
+printf("5 - PAIS 2, ESTADO 2\n");
+printf("6 - COMPARAÇÕES\n");
+printf("7 - FECHAR PROGRAMA\n");
 
-}
+switch (menu)
+{
+case 1:
+
+goto menu;
+break;
+
+case 2:
+goto cadastroestadoa02;
+break;
+
+case 3:
+goto cadastropais2;
+break;
+
+case 4:
+goto cadastroestadob01;
+break;
+
+case 5:
+goto cadastroestadob02;
+break;
+
+case 6:
+goto comparacao;
+break;
+
+case 7:
+goto fim;
+break;
+
+default:
+printf("O número escolhido não consta nas opções. Por favor, tente novamente\n\n\n");
+goto opccompara;
+   break;
 }
 
+
+fim:
+printf("*+´ Fim do programa! Obrigada por usá-lo :^D `+*");
 
     return 0;
+}
 }
