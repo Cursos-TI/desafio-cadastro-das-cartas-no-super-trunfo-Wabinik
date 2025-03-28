@@ -71,7 +71,7 @@ printf("DA COMPARAÇÃO:. \n\n");
 printf("  Para comparar cartas, é necessário cadastrar ao menos duas cartas.\nA comparação é feita entre cada atributo individualmente onde.:\n\n");
 printf("1 - Se o atributo de uma carta for maior que o da outra, lhe é\nacrescentado um ponto (+1) na comparação geral, ou é tido como\nvencedor, na comparação específica\n");
 printf("2 - Se os atributos tiverem o mesmo valor, não se acrescenta nada (+0)\nna comparação geral, ou se obtém um resultado de empate\nna comparação específica\n\n");
-printf("São atributos das cartas: ÁREA, POPULAÇÃO, PONTOS TURÍSTICOS, PIB,\nDENSIDADE DEMOGRÁFICA e PIB PER CAPITA\n\n");
+printf("São atributos das cartas: ÁREA, POPULAÇÃO, PONTOS TURÍSTICOS, PIB,\nDENSIDADE DEMOGRÁFICA e PIB PER CAPITA\n");
 printf("O usuário pode decidir qual comparação fazer através de um menu interativo\n\n");
 goto menu;
 
