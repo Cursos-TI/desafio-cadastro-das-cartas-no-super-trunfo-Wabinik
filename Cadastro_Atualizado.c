@@ -502,6 +502,7 @@ casocartaigual:
     pontocarta2 = 0;
     //Comparação de população // mudar para a estrutura de comparação simples
 //Aqui seria o que? "populaçãoa01 > populaçaoa02 ?  pontocarta1 += 1 : pontocarta2 += 1". Se os atributos forem iguais, nada se acrescenta.
+// Aqui precisaria de uma variável modificável, como "resultado", por exemplo. Achei melhor não colocar. (populacaoa01 > populacaoa02) ? pontocarta1 += 1 : pontocarta2 += 1;
 if (populacaoa01 > populacaoa02) pontocarta1 += 1;
 if (populacaoa01 < populacaoa02) pontocarta2 += 1;
 else;
