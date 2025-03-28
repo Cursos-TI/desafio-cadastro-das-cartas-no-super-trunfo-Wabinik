@@ -28,7 +28,7 @@ int main() {
  int ponturia01, ponturia02, ponturib01, ponturib02;
 
  //Características com vírgula das cidades
- float piba01, piba02, pibb01, pibb02;
+  float piba01, piba02, pibb01, pibb02;
  float areaa01, areaa02, areab01, areab02;
 
 
