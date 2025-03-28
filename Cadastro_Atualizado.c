@@ -36,7 +36,10 @@ int sim = 1, nao = 2, resposta;
 int opc1 = 1, opc2 = 2, opc3 = 3, opc4 = 4, resposta1, resposta2;
 int menu;
 
-//Pontuação das cartas
+//Pontuação das cartas específicas
+int populacao, area, pontoturistico, pib, densidade, pibpercapta;
+
+//Pontuação das cartas gerais
 int pontocarta1, pontocarta2, pontocarta3, pontocarta4, resultado;
 
 //Opção de pular, caso a pessoa já tenha cadastrado 
@@ -468,8 +471,123 @@ float densidadeb02 = populacaob02 / areab02;
 
 
  comparacao:
-//Parte de comparações: Seleção de cartas a serem comparadas.
- printf("Saudações! Este é o seu programa de comparações. Selecione a primeira carta a ser comparada:\n\n");
+ printf("Este é o seu campo de comparação! Desejas fazer uma comparação espcífica,\nou seja, de cada atributo separado, ou uma comparação geral?\n\n");
+ printf("1 -- COMPARAÇÃO ESPECÍFICA\n");
+ printf("2 -- COMPARAÇÃO GERAL\n\n");
+ fflush(stdin);
+ scanf("%i", &menu);
+
+ switch (menu)
+ {
+ case 1:
+goto comparacaoespecifica;
+   break;
+ 
+ case 2:
+goto comparacaogeral;
+   break;
+ default:
+ prinitf("Você selecionou uma opção inesixtente. Por favor, selecionar uma das\nopções mencionadas");
+ goto comparacao;
+   break;
+ }
+
+comparacaoespecifica:
+printf("Selecione o atributo a ser comparado:\n\n");
+printf("1 -- POPULAÇÃO\n");
+printf("2 -- ÁREA\n");
+printf("3 -- PONTOS TURÍSTICOS\n");
+printf("4 -- PIB\n");
+printf("5 -- DENSIDADE\n");
+printf("6 -- PIB PER CAPITA\n\n");
+fflush(stdin);
+scanf("%i", &menu);
+
+switch (menu)
+{
+case 1:
+printf("Selecione a primeira carta a ser comparada:\n\n");
+printf("1 -- %s - %s", paisA, estadoa01);
+printf("2 -- %s - %s", paisA, estadoa02);
+printf("3 -- %s - %s", paisB, estadob01);
+printf("4 -- %s - %s", paisB, estadob02);
+fflush(stdin);
+scanf("%i", &resposta1);
+
+//segunda seleção com goto caso se selecione a mesma carta.
+casocartaigual1:
+printf("Agora, selecione a segunda carta a ser comparada:\n\n");
+printf("1 -- %s - %s", paisA, estadoa01);
+printf("2 -- %s - %s", paisA, estadoa02);
+printf("3 -- %s - %s", paisB, estadob01);
+printf("4 -- %s - %s", paisB, estadob02);
+fflush(stdin);
+scanf("%i", &resposta2);
+
+if (resposta1 == 1 && resposta2 == 1 || resposta1 == 2 && resposta2 == 2 || resposta1 == 3 && resposta2 == 3 || resposta1 == 4 && resposta2 == 4) goto casocartaigual1;
+
+if (resposta1 == 1 && resposta2 == 2)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 1 && resposta2 == 3)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 1 && resposta2 == 4)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 2 && resposta2 == 3)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 2 && resposta2 == 4)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 3 && resposta2 == 4)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 1 && resposta2 == 1)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 1 && resposta2 == 2)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 1 && resposta2 == 2)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+if (resposta1 == 1 && resposta2 == 2)
+pontoturistico = (ponturia01 > ponturia02) ? printf("O vencedor é %s - %s", paisA, estadoa01) : printf("O vencedor é %s - %s", paisA, estadoa02);
+
+
+    break;
+case 2:
+
+    break;
+
+case 3:
+
+    break;
+
+case 4:
+
+    break;
+
+case 5:
+
+    break;
+
+case 6:
+
+    break;
+
+default:
+
+    break;
+}
+
+
+
+comparacaogeral:
+//Parte de comparações gerais: Seleção de cartas a serem comparadas.
+ printf("Selecione a primeira carta a ser comparada:\n\n");
  printf("1 -- %s - %s", paisA, estadoa01);
  printf("2 -- %s - %s", paisA, estadoa02);
  printf("3 -- %s - %s", paisB, estadob01);
